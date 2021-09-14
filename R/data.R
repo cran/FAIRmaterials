@@ -1,0 +1,23 @@
+#' Florida Metadata
+#'
+#' A dataset containing metadata for a solar powerplant in Florida
+#'
+#' @format A data frame with 1 row and 14 variables:
+#' \describe{
+#'   \item{latd}{latitude, degrees}
+#'   \item{invs}{inverter supplier name, encrypted}
+#'   \item{rcid}{system alpha-numeric delimiter, matches time-series data to metadata}
+#'   \item{modm}{module model name, encrypted}
+#'   \item{lond}{longitude, degrees}
+#'   \item{kgcz}{Koppen-Geiger climate zone specification of the system}
+#'   \item{npow}{nameplate power of the modules in the string, watts}
+#'   \item{ninv}{number of total inverters located at a site}
+#'   \item{mods}{module supplier or brand name, encrypted}
+#'   \item{tilt}{angle of tilt of the modules, degrees}
+#'   \item{invtsite}{the site name at which the inverter is located, in this case it is labeled by state}
+#'   \item{nmod}{the number of modules per inverter}
+#'   \item{tsrt}{the time-series start time}
+#'   \item{cell}{the Si crystalline state of the cells used in the modules}
+#' }
+#' @source \url{https://osf.io/yvzhk/}
+"test_metadata"
