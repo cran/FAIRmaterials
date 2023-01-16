@@ -1,6 +1,6 @@
 Package: FAIRmaterials
 Title: Make Materials Data FAIR
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: 
     c(person(given = "Will",
            family = "Oltjen",
@@ -100,6 +100,10 @@ Authors@R:
            family = "Yarus",
            role = c("aut"),
            email = "jeffrey.yarus@case.edu"),
+    person(given = "Mengjie",
+           family = "Li",
+           role = c("aut"),
+           email = "mengjie.li@ucf.edu"),
     person(given = "Kristopher O",
            family = "Davis",
            role = c("aut"),
@@ -125,13 +129,15 @@ Description: We provide here tools used by the Solar Durability and Lifetime Ext
 License: BSD_3_clause + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Imports: stringr, jsonlite
+Imports: stringr, jsonlite, svDialogs, tidyjson, RColorBrewer, igraph,
+        dplyr, graphics, jsonld, utils
 RoxygenNote: 7.2.3
 Depends: R (>= 2.10)
-Suggests: testthat (>= 3.0.0)
+Suggests: knitr, rmarkdown, testthat (>= 3.0.0)
 Config/testthat/edition: 3
+VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2023-01-05 21:53:10 UTC; wco3
+Packaged: 2023-01-11 00:33:41 UTC; wco3
 Author: Will Oltjen [aut] (<https://orcid.org/0000-0003-0380-1033>),
   Mingjian Lu [aut],
   Liangyi Huang [aut] (<https://orcid.org/0000-0003-0845-3293>),
@@ -156,6 +162,7 @@ Author: Will Oltjen [aut] (<https://orcid.org/0000-0003-0380-1033>),
   Leean Jo [aut],
   Zelin Li [aut],
   Jeffrey Yarus [aut],
+  Mengjie Li [aut],
   Kristopher O Davis [aut],
   Laura Bruckman [aut],
   Yinghui Wu [aut],
@@ -163,4 +170,4 @@ Author: Will Oltjen [aut] (<https://orcid.org/0000-0003-0380-1033>),
   Solar Durability and Lifetime Extension Center [cph, fnd]
 Maintainer: Roger French <roger.french@case.edu>
 Repository: CRAN
-Date/Publication: 2023-01-06 14:30:02 UTC
+Date/Publication: 2023-01-16 18:40:08 UTC

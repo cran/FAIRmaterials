@@ -4,10 +4,17 @@
 \alias{fairify_data}
 \title{FAIRify Data}
 \usage{
-fairify_data(dataframe, domain, saveLocal = FALSE)
+fairify_data(
+  dataframe,
+  unit_dataframe = data.frame(),
+  domain,
+  saveLocal = FALSE
+)
 }
 \arguments{
 \item{dataframe}{User input metadata dataframe}
+
+\item{unit_dataframe}{User input units (one row dataframe) \cr}
 
 \item{domain}{Json-LD template to be filled by function \cr}
 
@@ -38,7 +45,10 @@ package.
 \examples{
 
 metadata <- data.frame('CellMaterial' = 'mono-silicon',
-                       'EncapsulantMaterial = EVA')
+                       'Module Efficiency' = 20.1)
 
-fairify_data(metadata, domain = 'PVModule', saveLocal = FALSE)
+metadata_units <- data.frame('CellMaterial' = NA,
+                            'ModuleEfficiency' = '\%')
+
+fairify_data(metadata, metadata_units, 'PVModule', saveLocal = FALSE)
 }
