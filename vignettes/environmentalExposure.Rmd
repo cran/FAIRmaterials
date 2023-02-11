@@ -1,0 +1,55 @@
+---
+title: "Environmental Exposure JSON-LD"
+author: "Leean Jo, Laura S. Bruckman, Roger H. French"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Environmental Exposure JSON-LD}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+Environmental Exposure JSON-LD Description
+-----------------------------------
+This json-ld template is used to address multiple environmental stressors that result in material degradation. It includes three different degradation processes in addition to a synergy effect.
+
+Creating JSON-LD for Environmental Exposure in R
+------------------------------------------
+```{r, message=FALSE, eval=FALSE}
+library(FAIRmaterials)
+
+# An example data frame for Environmental Exposure
+environmental_exposure <- data.frame(
+  'temperature' = c('80', '60'),
+  'RelativeHumidity' = c('85', '85')
+)
+
+# This will generate JSON-LD file for the example data
+output <- fairify_data(environmental_exposure, domain = 'EnvironmentalExposure', saveLocal = TRUE)
+```
+
+Creating JSON-LD for Environmental Exposure in Python
+------------------------------------------
+```{python, eval = FALSE, python.reticulate = FALSE}
+from fairmaterials.fairify_data import *
+import pandas as pd
+
+# An example data frame for Environmental Exposure
+environmental_exposure = pd.DataFrame({
+  'temperature': ['80', '60'],
+  'RelativeHumidity': ['85', '85']
+})
+
+# This will generate JSON-LD file for the example data
+output <- fairify_data(environmental_exposure, domain = 'EnvironmentalExposure')
+```
+
+Environmental Exposure schema diagram
+--------------------------
+
+```{r, out.width="1200px", echo=FALSE, fig.cap="Environmental Exposure schema diagram"}
+knitr::include_graphics("environmentalExposure.png")
+```
+
+Acknowledgment
+--------------------------

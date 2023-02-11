@@ -1,0 +1,47 @@
+---
+title: "Photovoltaic Cell JSON-LD"
+author: "Mengjie Li, Kris Davis, Max Liggett, Jarod Kaltenbaugh, William C. Oltjen, Xuanji Yu, Laura S. Bruckman, Roger H. French"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Photovoltaic Cell JSON-LD}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+Photovoltaic Cell JSON-LD Description
+-----------------------------------
+This json-ld template is used to store metadata information commonly used to describe photovoltaic (PV) cell. There is information included on the PV module, cell position, dimension, cell cut type and cell technology type. Note that a lot of the material included in this json pulls from the OrangeButton Taxonomy. 
+
+Creating JSON-LD for photovoltaicCell in R
+------------------------------------------
+```{r, message=FALSE, eval=FALSE}
+library(FAIRmaterials)
+
+# This will generate JSON-LD file for the example data
+output <- fairify_data(cell_example, domain = 'photovoltaicCell', saveLocal = TRUE)
+```
+
+Creating JSON-LD for photovoltaicCell in Python
+------------------------------------------
+```{python, eval = FALSE, python.reticulate = FALSE}
+import FAIRmaterials
+
+# This will generate JSON-LD file for the example data
+output <- fairify_data('cell_example.csv', domain = 'photovoltaicCell')
+```
+
+
+Photovoltaic Cell schema diagram
+--------------------------
+
+```{r, out.width="800px", echo=FALSE, fig.cap="Photovoltaic Cell schema diagram"}
+knitr::include_graphics("photovoltaicCell.drawio.png")
+```
+
+Acknowledgment
+--------------------------
+This material is based upon work supported by
+
+* Department of Energy (DOE) - Office of Energy Efficiency and Renewable Energy (EERE) under Solar Energy Technologies Office (SETO): [DE-EE0009347]  
+* Department of Energy (DOE) - National Nuclear Security Administration (NNSA): [DOE-NNSA-B6477887].

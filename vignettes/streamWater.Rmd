@@ -1,0 +1,75 @@
+---
+title: "Stream Water JSON-LD"
+author: "Deepa Bhuvanagiri, Jeffrey Yarus, Roger H. French"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    df_print: paged
+vignette: >
+  %\VignetteIndexEntry{Stream Water JSON-LD}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+StreamWater JSON-LD Description
+-----------------------------------
+This JSON-LD Well Log template consists of meta features used to categorize the different water data collected from water gauges by the United States Geological Survey. Examples of meta features include site number, date and parameter codes. 
+
+Creating JSON-LD for Stream Water in R
+------------------------------------------
+```{r, message=FALSE, eval=FALSE}
+library(FAIRmaterials)
+
+# An example data frame for stream water header information
+stream_water <- data.frame(
+  'siteNumber' = c("01491000","01645000"),
+  'date' = c('8-19-1998', '01-30-2002'),
+  'parameterCode' = c('sediment', 'information')
+)
+
+
+# This will generate json-ld files for the example data
+stream_water_output <- fairify_data(stream_water, domain = 'streamWater')
+```
+
+ Stream Water  schema diagram
+--------------------------
+
+```{r, out.width="1200px", echo=FALSE, fig.cap="Well Log  schema diagram"}
+knitr::include_graphics("streamWater.png")
+```
+
+
+Creating JSON-LD for Stream Water in Python
+------------------------------------------
+
+```{python, eval = FALSE, python.reticulate = FALSE}
+from fairmaterials.fairify_data import *
+import pandas as pd
+
+# An example data frame for stream water data
+
+data = pd.DataFrame (
+  'siteNumber' = ['01491000', '01645000'],
+  'date' = ['8-19-1998', '01-30-2002'],
+  'parameterCode' = ['sediment', 'information']])
+   
+
+# This will generate JSON-LD file for the example data in Python
+fairify_data(data,'streamWater')
+```
+
+
+
+
+References
+--------------------------
+https://jsonwelllogformat.org/
+https://www.energistics.org/energistics-unit-of-measure-standard/
+https://schema.org/
+ https://ppdm.org/ppdm/PPDM/Standards/What_is_a_Well/PPDM/What_is_a_Well.aspx.
+https://www.iso.org/standard/73830.html
+
+Acknowledgment
+--------------------------
+This material is based upon work supported by SDLE Research Center 
+

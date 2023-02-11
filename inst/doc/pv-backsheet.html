@@ -12,7 +12,7 @@
 
 <meta name="author" content="Zelin Li, Raymond Wieser, Xuanji Yu, Roger H. French, Laura S. Bruckman" />
 
-<meta name="date" content="2023-01-10" />
+<meta name="date" content="2023-02-10" />
 
 <title>Photovoltaic Polymer Backsheets JSON-LD</title>
 
@@ -342,7 +342,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 JSON-LD</h1>
 <h4 class="author">Zelin Li, Raymond Wieser, Xuanji Yu, Roger H. French,
 Laura S. Bruckman</h4>
-<h4 class="date">2023-01-10</h4>
+<h4 class="date">2023-02-10</h4>
 
 
 
@@ -376,16 +376,14 @@ from the OrangeButton Taxonomy.</p>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># An example data frame for PV Polymer Backsheets</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>pvbacksheet_df <span class="op">&lt;-</span> data.frame(<span class="st">&#39;SiteName&#39;</span> <span class="op">=</span> c(<span class="st">&#39;SS-16-7&#39;</span>, <span class="st">&#39;SS-16-7&#39;</span>),</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&#39;RowName&#39;</span> <span class="op">=</span> c(<span class="st">&#39;B01R01&#39;</span>, <span class="st">&#39;B01R02&#39;</span>),</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&#39;BacksheetMaterial&#39;</span> <span class="op">=</span> c(<span class="st">&#39;PVDF&#39;</span>, <span class="st">&#39;PVDF&#39;</span>),</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&#39;YI&#39;</span> <span class="op">=</span> c(<span class="st">&#39;1.1271&#39;</span>, <span class="st">&#39;1.0247&#39;</span>),</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&#39;Gloss60&#39;</span> <span class="op">=</span> c(<span class="st">&#39;29.1491&#39;</span>, <span class="st">&#39;28.7791&#39;</span>))</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>pvbacksheet_example <span class="op">=</span> pd.DataFrame(pvbacksheet_df)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>                            </span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># This will generate JSON-LD file for the example data</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>output <span class="op">&lt;-</span> fairify_data(pvbacksheet_example, domain <span class="op">=</span> <span class="st">&#39;PolymerBacksheets&#39;</span>)</span></code></pre></div>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>pvbacksheet_df <span class="op">=</span> pd.DataFrame({<span class="st">&#39;SiteName&#39;</span>: [<span class="st">&#39;SS-16-7&#39;</span>, <span class="st">&#39;SS-16-7&#39;</span>],</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&#39;RowName&#39;</span>: [<span class="st">&#39;B01R01&#39;</span>, <span class="st">&#39;B01R02&#39;</span>],</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&#39;BacksheetMaterial&#39;</span>: [<span class="st">&#39;PVDF&#39;</span>, <span class="st">&#39;PVDF&#39;</span>],</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&#39;YI&#39;</span>: [<span class="st">&#39;1.1271&#39;</span>, <span class="st">&#39;1.0247&#39;</span>],</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&#39;Gloss60&#39;</span>: [<span class="st">&#39;29.1491&#39;</span>, <span class="st">&#39;28.7791&#39;</span>]})</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>                            </span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># This will generate JSON-LD file for the example data</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>output <span class="op">&lt;-</span> fairify_data(pvbacksheet_example, domain <span class="op">=</span> <span class="st">&#39;PolymerBacksheets&#39;</span>)</span></code></pre></div>
 </div>
 <div id="pv-polymer-backsheet-schema-diagram" class="section level2">
 <h2>PV Polymer Backsheet schema diagram</h2>

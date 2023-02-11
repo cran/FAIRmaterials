@@ -1,10 +1,10 @@
 ---
-title: "Commercial and Residential Buildings"
+title: "Commercial and Residential Buildings JSON-LD"
 author: "Tian Wang, Scott Maurer"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Commercial and Residential Buildings}
+  %\VignetteIndexEntry{Commercial and Residential Buildings JSON-LD}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

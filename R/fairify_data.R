@@ -83,7 +83,12 @@ json_conversion <- function(row, unit_dataframe, domain, i) {
 
     eval(str2expression(eval_statement))
 
-    if (!stringr::str_detect(unit_statement, 'NA')) {
+    if (length(unit_statement) > 1) {
+
+      for (statement in unit_statement) {
+        eval(str2expression(statement))
+      }
+    } else if (!stringr::str_detect(unit_statement, 'NA')) {
       eval(str2expression(unit_statement))
     }
 
@@ -100,19 +105,26 @@ json_conversion <- function(row, unit_dataframe, domain, i) {
 #' @param domain Json-LD template to be filled by function \cr
 #' @param saveLocal Boolean stating whether the files should be saved locally \cr
 #' User can FAIRify data in the following domains: \cr \cr
-#' PVModule \cr
-#' Buildings \cr
-#' CapillaryElectrophoresis \cr
-#' GeospatialWell \cr
-#' MetalAM \cr
-#' OpticalProfilometry \cr
-#' OpticalSpectroscopy \cr
-#' PolymerAM \cr
-#' PolymerBacksheets \cr
-#' PVModule \cr
-#' PVSystem \cr
-#' XCT \cr
-#' XRD
+#' asterGdem \cr
+#' buildings \cr
+#' capillaryElectrophoresis \cr
+#' computedTomographyXRay \cr
+#' diffractionXRay \cr
+#' environmentalExposure \cr
+#' geospatialWell \cr
+#' materialsProcessing \cr
+#' metalAdditiveManufacturing \cr
+#' opticalProfilometry \cr
+#' opticalSpectroscopy \cr
+#' photovoltaicBacksheet \cr
+#' photovoltaicCell \cr
+#' photovoltaicInverter \cr
+#' photovoltaicModule \cr
+#' photovoltaicSystem \cr
+#' polymerAdditiveManufacturing \cr
+#' polymerFormulation \cr
+#' soil \cr
+#' streamWater
 #'
 #' @description Function that receives user input metadata and converts that
 #' into a FAIRified json-ld file based on a template created as part of this
@@ -128,7 +140,7 @@ json_conversion <- function(row, unit_dataframe, domain, i) {
 #'metadata_units <- data.frame('CellMaterial' = NA,
 #'                             'ModuleEfficiency' = '%')
 #'
-#' fairify_data(metadata, metadata_units, 'PVModule', saveLocal = FALSE)
+#' fairify_data(metadata, metadata_units, 'photovoltaicModule', saveLocal = FALSE)
 fairify_data <- function(dataframe, unit_dataframe = data.frame(), domain, saveLocal = FALSE) {
 
   output <- list()
@@ -174,106 +186,139 @@ fairify_data <- function(dataframe, unit_dataframe = data.frame(), domain, saveL
 
 #' This is data to be included in the package
 #'
-#' @name CapillaryElectrophoresis
+#' @name asterGdem
 #' @docType data
 #' @keywords internal
 NULL
 
 #' This is data to be included in the package
 #'
-#' @name MetalAM
-#' @docType data
-#' @keywords internal
-NULL
-
-
-#' This is data to be included in the package
-#'
-#' @name OpticalProfilometry
+#' @name buildings
 #' @docType data
 #' @keywords internal
 NULL
 
 #' This is data to be included in the package
 #'
-#' @name OpticalSpectroscopy
+#' @name capillaryElectrophoresis
 #' @docType data
 #' @keywords internal
 NULL
 
 #' This is data to be included in the package
 #'
-#' @name PVModule
+#' @name computedTomographyXRay
 #' @docType data
 #' @keywords internal
 NULL
 
 #' This is data to be included in the package
 #'
-#' @name PVSystem
+#' @name diffractionXRay
 #' @docType data
 #' @keywords internal
 NULL
 
 #' This is data to be included in the package
 #'
-#' @name PolymerAM
+#' @name environmentalExposure
 #' @docType data
 #' @keywords internal
 NULL
 
 #' This is data to be included in the package
 #'
-#' @name PolymerBacksheets
+#' @name geospatialWell
 #' @docType data
 #' @keywords internal
 NULL
 
 #' This is data to be included in the package
 #'
-#' @name XCT
+#' @name materialsProcessing
 #' @docType data
 #' @keywords internal
 NULL
 
 #' This is data to be included in the package
 #'
-#' @name XRD
+#' @name metalAdditiveManufacturing
 #' @docType data
 #' @keywords internal
 NULL
 
 #' This is data to be included in the package
 #'
-#' @name PVCell
+#' @name opticalProfilometry
 #' @docType data
 #' @keywords internal
 NULL
 
 #' This is data to be included in the package
 #'
-#' @name PVInverter
+#' @name opticalSpectroscopy
+#' @docType data
+#' @keywords internal
+NULL
+#' This is data to be included in the package
+#'
+#' @name photovoltaicBacksheet
 #' @docType data
 #' @keywords internal
 NULL
 
 #' This is data to be included in the package
 #'
-#' @name PolymerFormulations
+#' @name photovoltaicCell
 #' @docType data
 #' @keywords internal
 NULL
 
 #' This is data to be included in the package
 #'
-#' @name MaterialsProcessing
+#' @name photovoltaicInverter
 #' @docType data
 #' @keywords internal
 NULL
 
 #' This is data to be included in the package
 #'
-#' @name Buildings
+#' @name photovoltaicModule
+#' @docType data
+#' @keywords internal
+NULL
+
+#' This is data to be included in the package
+#'
+#' @name photovoltaicSystem
+#' @docType data
+#' @keywords internal
+NULL
+
+#' This is data to be included in the package
+#'
+#' @name polymerAdditiveManufacturing
+#' @docType data
+#' @keywords internal
+NULL
+
+#' This is data to be included in the package
+#'
+#' @name polymerFormulation
+#' @docType data
+#' @keywords internal
+NULL
+
+#' This is data to be included in the package
+#'
+#' @name soil
+#' @docType data
+#' @keywords internal
+NULL
+
+#' This is data to be included in the package
+#'
+#' @name streamWater
 #' @docType data
 #' @keywords internal
 NULL

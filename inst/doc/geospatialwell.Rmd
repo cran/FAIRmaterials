@@ -1,0 +1,85 @@
+---
+title: "Geospatial well logs JSON-LD"
+author: "Hope Omodolor, Jeffrey Yarus, Roger H. French"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    df_print: paged
+vignette: >
+  %\VignetteIndexEntry{Geospatial well logs JSON-LD}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+Well Log JSON-LD Description
+-----------------------------------
+A JSON-LD Well Log template consists of one or more log sets containing a log header, Geocoordinate, location, curve definitions, and the corresponding measurement data. The log header contains metadata describing the logging operation and consists of JSON objects and arrays. Geocoordinate captures geographic coordinate information such as longitude and latitude. Curve data are specified arrays for each index entry. A more detailed structure is shown in the schema diagram below.
+
+Creating JSON-LD for Well Log in R
+------------------------------------------
+```{r, message=FALSE, eval=FALSE}
+library(FAIRmaterials)
+
+# An example data frame for well log header information
+welllog_data <- data.frame(
+  'wellID' = c('34019202560000', '34019202860000'),
+  'well' = c('RP SMITH& ST EVANS', 'CLARK ET AL UNIT'),
+  'field' = c('EAST CANTON', 'WILDCAT'),
+  'date' = c('10-9-1966', '6-30-1967'),
+  'operator' = c(SCHLUMBERGER, SCHLUMBERGER),
+  'startIndex' = c(0.0, 1187)
+   'endIndex' = c(5100.0, 5170),
+  'step' = c(0.5, 0.5)
+)
+
+
+# This will generate json-ld files for the example data
+well log_output <- fairify_data(welllog_data, domain = 'welllog')
+```
+
+Creating JSON-LD for well log in Python
+------------------------------------------
+
+```{python, eval = FALSE, python.reticulate = FALSE}
+from fairmaterials.fairify_data import *
+import pandas as pd
+
+# An example data frame for Well Log data
+
+data = pd.DataFrame (
+  'wellID' = ['34019202560000', '34019202860000'],
+  'well' = ['RP SMITH& ST EVANS', 'CLARK ET AL UNIT'],
+  'field' = ['EAST CANTON', 'WILDCAT'],
+  'date' = ['10-9-1966', '6-30-1967'],
+  'operator' = ['SCHLUMBERGER', 'SCHLUMBERGER'],
+  'startIndex' = [0.0, 1187]
+   'endIndex' = [5100.0, 5170],
+  'step' = [0.5, 0.5])
+   
+
+# This will generate JSON-LD file for the example data in Python
+fairify_data(data,'well_log')
+```
+
+ Well Log  schema diagram
+--------------------------
+
+```{r, out.width="1200px", echo=FALSE, fig.cap="Well Log  schema diagram"}
+knitr::include_graphics("well_log.png")
+```
+
+
+
+
+References
+--------------------------
+https://jsonwelllogformat.org/
+https://www.energistics.org/energistics-unit-of-measure-standard/
+https://schema.org/
+https://docs.ppdm.org/
+https://www.iso.org/standard/73830.html
+https://github.com/JSONWellLogFormat/JSONWellLogFormat
+
+Acknowledgment
+--------------------------
+This material is based upon work supported by SDLE Research Center 
+

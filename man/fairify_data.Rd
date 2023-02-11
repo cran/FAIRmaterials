@@ -20,19 +20,26 @@ fairify_data(
 
 \item{saveLocal}{Boolean stating whether the files should be saved locally \cr
 User can FAIRify data in the following domains: \cr \cr
-PVModule \cr
-Buildings \cr
-CapillaryElectrophoresis \cr
-GeospatialWell \cr
-MetalAM \cr
-OpticalProfilometry \cr
-OpticalSpectroscopy \cr
-PolymerAM \cr
-PolymerBacksheets \cr
-PVModule \cr
-PVSystem \cr
-XCT \cr
-XRD}
+asterGdem \cr
+buildings \cr
+capillaryElectrophoresis \cr
+computedTomographyXRay \cr
+diffractionXRay \cr
+environmentalExposure \cr
+geospatialWell \cr
+materialsProcessing \cr
+metalAdditiveManufacturing \cr
+opticalProfilometry \cr
+opticalSpectroscopy \cr
+photovoltaicBacksheet \cr
+photovoltaicCell \cr
+photovoltaicInverter \cr
+photovoltaicModule \cr
+photovoltaicSystem \cr
+polymerAdditiveManufacturing \cr
+polymerFormulation \cr
+soil \cr
+streamWater}
 }
 \value{
 FAIRified .json-ld text document
@@ -50,5 +57,5 @@ metadata <- data.frame('CellMaterial' = 'mono-silicon',
 metadata_units <- data.frame('CellMaterial' = NA,
                             'ModuleEfficiency' = '\%')
 
-fairify_data(metadata, metadata_units, 'PVModule', saveLocal = FALSE)
+fairify_data(metadata, metadata_units, 'photovoltaicModule', saveLocal = FALSE)
 }

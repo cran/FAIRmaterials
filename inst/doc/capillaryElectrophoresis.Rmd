@@ -1,10 +1,10 @@
 ---
-title: "Capillary Electrophoresis"
+title: "Capillary Electrophoresis JSON-LD"
 author: "Erika Imada Barcelos, Laura S. Bruckman, Roger H. French"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Capillary Electrophoresis}
+  %\VignetteIndexEntry{Capillary Electrophoresis JSON-LD}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -21,7 +21,7 @@ As important as the experiment metadata is the information about the sample to b
 
 
 
-Creating JSON-LD for FE Formulations
+Creating JSON-LD for CE in R
 ------------------------------------------
 ```{r, message=FALSE, eval=FALSE}
 library(FAIRmaterials)
@@ -38,6 +38,24 @@ CE_exp <- data.frame(
 # This will generate JSON-LD file for the example data
 output <- fairify_data(CE_exp, domain = 'CapillaryElectrophoresis', saveLocal = TRUE)
 ```
+
+Creating JSON-LD for CE in Python
+------------------------------------------
+```{python, eval = FALSE, python.reticulate = FALSE}
+from fairmaterials.fairify_data import *
+import pandas as pd
+
+# An example data frame for CE
+CE_exp = pd.DataFrame  ('bufferpH' = [7.4, 6.8],
+  'appliedVoltage' = [26, 30],
+  'columnTemperature' = [50, 60],
+  'capillaryLength' = [15, 30],
+  'capillaryMaterial' = ['silica', 'polyacrylamide'])
+
+# This will generate JSON-LD file for the example data
+output <- fairify_data(CE_exp, domain = 'CapillaryElectrophoresis')
+```
+
 
 CE Formulations schema diagram
 --------------------------

@@ -1,6 +1,6 @@
 Package: FAIRmaterials
 Title: Make Materials Data FAIR
-Version: 0.2.0
+Version: 0.3.0
 Authors@R: 
     c(person(given = "Will",
            family = "Oltjen",
@@ -137,7 +137,7 @@ Suggests: knitr, rmarkdown, testthat (>= 3.0.0)
 Config/testthat/edition: 3
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2023-01-11 00:33:41 UTC; wco3
+Packaged: 2023-02-10 22:01:06 UTC; wco3
 Author: Will Oltjen [aut] (<https://orcid.org/0000-0003-0380-1033>),
   Mingjian Lu [aut],
   Liangyi Huang [aut] (<https://orcid.org/0000-0003-0845-3293>),
@@ -170,4 +170,4 @@ Author: Will Oltjen [aut] (<https://orcid.org/0000-0003-0380-1033>),
   Solar Durability and Lifetime Extension Center [cph, fnd]
 Maintainer: Roger French <roger.french@case.edu>
 Repository: CRAN
-Date/Publication: 2023-01-16 18:40:08 UTC
+Date/Publication: 2023-02-11 07:10:07 UTC
