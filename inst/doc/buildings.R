@@ -1,7 +1,7 @@
 ## ---- message=FALSE, eval=FALSE-----------------------------------------------
 #  library(FAIRmaterials)
 #  
-#  # Create R data frame for xrd
+#  # Create R data frame for commercial and residential buildings
 #  bldg_data <- data.frame(
 #    "PremisesName" = c("bldg 680", "bldg 686", "bldg 352"),
 #    "OperatorType" = "Food Sales",
@@ -26,7 +26,7 @@
 #  from fairmaterials.fairify_data import *
 #  import pandas as pd
 #  
-#  # create python data frame for xrd
+#  # create python data frame for commercial and residential buildings
 #  data = {'PremisesName':['bldg 680', 'bldg 686', 'bldg 352'],
 #          'OperatorType':['Food Sales', 'Food Sales', 'Food Sales'],
 #          'Longitude':[-75.27, -76.88, -78.52],
@@ -50,6 +50,6 @@
 #  fairify_data(bldg_data,'building')
 #  
 
-## ---- out.width="1600px", echo=FALSE------------------------------------------
+## ---- out.width="1600px", echo=FALSE, fig.cap=" Commercial and Residential Buildings schema diagram"----
 knitr::include_graphics("building_schema.png")
 

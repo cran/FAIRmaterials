@@ -13,6 +13,6 @@
 #  # This will generate JSON-LD file for the example data
 #  output <- fairify_data(CE_exp, domain = 'CapillaryElectrophoresis', saveLocal = TRUE)
 
-## ---- out.width="1200px", echo=FALSE, fig.cap="CE Formulations schema diagram"----
+## ---- out.width="1200px", echo=FALSE, fig.cap="CE Schema"---------------------
 knitr::include_graphics("capillaryElectrophoresis.png")
 

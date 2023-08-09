@@ -8,7 +8,8 @@ fairify_data(
   dataframe,
   unit_dataframe = data.frame(),
   domain,
-  saveLocal = FALSE
+  saveLocal = FALSE,
+  data_list = list()
 )
 }
 \arguments{
@@ -18,7 +19,9 @@ fairify_data(
 
 \item{domain}{Json-LD template to be filled by function \cr}
 
-\item{saveLocal}{Boolean stating whether the files should be saved locally \cr
+\item{saveLocal}{Boolean stating whether the files should be saved locally \cr}
+
+\item{data_list}{List of columns included in any of your raw dataframes \cr
 User can FAIRify data in the following domains: \cr \cr
 asterGdem \cr
 buildings \cr

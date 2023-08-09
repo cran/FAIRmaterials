@@ -3,5 +3,8 @@
 export(fair_expand)
 export(fairify_data)
 export(plot_json_graph)
+export(remove_adjacent_numbered_suffixes)
+export(rename_fair)
+export(replace_null_recursive)
 export(validate_jsonld)
 importFrom(dplyr,"%>%")

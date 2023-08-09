@@ -12,7 +12,7 @@
 
 <meta name="author" content="Kristen J. Hernandez, Hein Htet Aung, Roger H. French, Laura S. Bruckman" />
 
-<meta name="date" content="2023-02-10" />
+<meta name="date" content="2023-08-09" />
 
 <title>Metal Additive Manufacturing JSON-LD</title>
 
@@ -341,27 +341,28 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <h1 class="title toc-ignore">Metal Additive Manufacturing JSON-LD</h1>
 <h4 class="author">Kristen J. Hernandez, Hein Htet Aung, Roger H.
 French, Laura S. Bruckman</h4>
-<h4 class="date">2023-02-10</h4>
+<h4 class="date">2023-08-09</h4>
 
 
 
 <div id="metal-am-json-ld-description" class="section level2">
 <h2>Metal AM JSON-LD Description</h2>
-<p>In Metal AM JSON-LD template, the sample information (sample id) is
-related to printing paramters configure to produce the part, the build
-geometry of the part, material properties of the part and the
-characterization techniques (in-situ and ex-situ) performed on the part.
-More detailed structure is shown in the schema diagram below. The
+<p>In Metal Additive Manufacturing (AM) JSON-LD template, the sample
+information (sample id) is related to printing parameters configure to
+produce the part, the build geometry of the part, material properties of
+the part and the characterization techniques (in-situ and ex-situ)
+performed on the part.</p>
+<p>More detailed structure is shown in the schema diagram below. The
 purpose of using this JSON-LD template is to create a serialized and
 searchable template for all Metal AM experimental parameters and
 conditions that may be searched for and utilized in large scale data
 analytics.</p>
 </div>
-<div id="creating-json-ld-for-metal-am" class="section level2">
-<h2>Creating JSON-LD for Metal AM</h2>
+<div id="creating-json-ld-for-metal-am-in-r" class="section level2">
+<h2>Creating JSON-LD for Metal AM in R</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(FAIRmaterials)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># An example data frame for polymer AM</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># An example data frame for Metal AM </span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>metalAM_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">&#39;sampleID&#39;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&#39;sa12345&#39;</span>, <span class="st">&#39;sa24682&#39;</span>),</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">&#39;printMethod&#39;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&#39;multi&#39;</span>, <span class="st">&#39;single&#39;</span>),</span>
@@ -373,12 +374,12 @@ analytics.</p>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># This will generate json-ld files for the example data</span></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>metal_output <span class="ot">&lt;-</span> <span class="fu">fairify_data</span>(metalAM_data, <span class="at">domain =</span> <span class="st">&#39;&#39;</span>)</span></code></pre></div>
 </div>
-<div id="use-python-package-fairmaterials-to-create-json-ld-for-xrd" class="section level2">
-<h2>Use Python package fairmaterials to create JSON-LD for XRD</h2>
+<div id="creating-json-ld-for-metal-am-in-python" class="section level2">
+<h2>Creating JSON-LD for Metal AM in Python</h2>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>from fairmaterials.fairify_data import <span class="sc">*</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>import pandas as pd</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># create python data frame for xrd</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># create python data frame for Metal AM </span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>data <span class="ot">=</span> {</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">&#39;sampleID&#39;</span><span class="sc">:</span>[<span class="st">&#39;sa12345&#39;</span>, <span class="st">&#39;sa24682&#39;</span>],</span>

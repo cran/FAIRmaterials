@@ -11,7 +11,9 @@ vignette: >
 
 Polymer AM JSON-LD Description
 -----------------------------------
-In Polymer AM JSON-LD template, the sample information (sample id) is related to printing parameters to produce the part, the build geometry of the part, material properties of the part and the characterization techniques (in-situ and ex-situ) performed on the part. More detailed structure is shown in the schema diagram below.
+In Polymer Additive Manufacturing (AM) JSON-LD template, the sample information (sample id) is related to printing parameters to produce the part, the build geometry of the part, material properties of the part and the characterization techniques (in-situ and ex-situ) performed on the part. 
+
+More detailed structure is shown in the schema diagram below.
 
 Creating JSON-LD for Polymer AM  in R
 ------------------------------------------
@@ -50,7 +52,7 @@ data = pd.DataFrame(
 )
 
 # This will generate JSON-LD file for the example data
-output <- fairify_data(CE_exp, domain = 'PolymerAM')
+output <- fairify_data(data, domain = 'PolymerAM')
 ```
 
 

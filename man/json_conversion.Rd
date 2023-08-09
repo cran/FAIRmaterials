@@ -4,7 +4,7 @@
 \alias{json_conversion}
 \title{Convert Dataframe to Json from a Template}
 \usage{
-json_conversion(row, unit_dataframe, domain, i)
+json_conversion(row, unit_dataframe, domain, i, data_list)
 }
 \arguments{
 \item{row}{Row of a user input csv that includes metadata}
@@ -14,6 +14,8 @@ json_conversion(row, unit_dataframe, domain, i)
 \item{domain}{Json-LD template to be filled by function}
 
 \item{i}{Iteration of the loop tracker}
+
+\item{data_list}{List of columns included in any of your raw dataframes \cr}
 }
 \value{
 FAIRified .json-ld text document

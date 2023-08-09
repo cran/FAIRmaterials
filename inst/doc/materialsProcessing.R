@@ -1,7 +1,7 @@
 ## ---- message=FALSE, eval=FALSE-----------------------------------------------
 #  library(FAIRmaterials)
 #  
-#  # Create R data frame for xrd
+#  # Create R data frame for Materials Processing
 #  materialsprocessing <- data.frame(
 #    'sinteringTemperature' = c(73.96982466, 88.4325155),
 #    'sinteringPressure' = c(86.04484907,90.87423125),
@@ -21,7 +21,7 @@
 #  from fairmaterials.fairify_data import *
 #  import pandas as pd
 #  
-#  # create python data frame for xrd
+#  # create python data frame for Materials Processing
 #  data = {'sinteringTemperature' : [73.96982466, 88.4325155],
 #  'sinteringPressure' : [86.04484907, 90.87423125],
 #  'sinteringAtmosphere' : [28.61041584, 91.68762828],
@@ -40,6 +40,6 @@
 #  fairify_data(materialsprocessing,'MaterialsProcessing')
 #  
 
-## ---- out.width="800px", echo=FALSE-------------------------------------------
+## ---- out.width="800px", echo=FALSE, fig.cap="Materials Processing schema diagram"----
 knitr::include_graphics("materialsProcessing.drawio.png")
 

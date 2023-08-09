@@ -12,7 +12,7 @@
 
 <meta name="author" content="Hein Htet Aung, Roger H. French, Laura S. Bruckman" />
 
-<meta name="date" content="2023-02-10" />
+<meta name="date" content="2023-08-09" />
 
 <title>Polymer Additive Manufacturing JSON-LD</title>
 
@@ -341,17 +341,18 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <h1 class="title toc-ignore">Polymer Additive Manufacturing JSON-LD</h1>
 <h4 class="author">Hein Htet Aung, Roger H. French, Laura S.
 Bruckman</h4>
-<h4 class="date">2023-02-10</h4>
+<h4 class="date">2023-08-09</h4>
 
 
 
 <div id="polymer-am-json-ld-description" class="section level2">
 <h2>Polymer AM JSON-LD Description</h2>
-<p>In Polymer AM JSON-LD template, the sample information (sample id) is
-related to printing parameters to produce the part, the build geometry
-of the part, material properties of the part and the characterization
-techniques (in-situ and ex-situ) performed on the part. More detailed
-structure is shown in the schema diagram below.</p>
+<p>In Polymer Additive Manufacturing (AM) JSON-LD template, the sample
+information (sample id) is related to printing parameters to produce the
+part, the build geometry of the part, material properties of the part
+and the characterization techniques (in-situ and ex-situ) performed on
+the part.</p>
+<p>More detailed structure is shown in the schema diagram below.</p>
 </div>
 <div id="creating-json-ld-for-polymer-am-in-r" class="section level2">
 <h2>Creating JSON-LD for Polymer AM in R</h2>
@@ -386,7 +387,7 @@ structure is shown in the schema diagram below.</p>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># This will generate JSON-LD file for the example data</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>output <span class="op">&lt;-</span> fairify_data(CE_exp, domain <span class="op">=</span> <span class="st">&#39;PolymerAM&#39;</span>)</span></code></pre></div>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>output <span class="op">&lt;-</span> fairify_data(data, domain <span class="op">=</span> <span class="st">&#39;PolymerAM&#39;</span>)</span></code></pre></div>
 </div>
 <div id="polymer-am-schema-diagram" class="section level2">
 <h2>Polymer AM schema diagram</h2>

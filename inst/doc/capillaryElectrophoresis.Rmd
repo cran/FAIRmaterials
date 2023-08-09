@@ -14,10 +14,10 @@ Capillary Electrophoresis JSON-LD Description
 Capillary Electrophoresis (CE) is a separation  method in which ions are separated based on their ionic charge and  electrophoretic mobility using an applied voltage. 
 One of the main advantages of CE is the usage of lower sample volumes compared to traditional separation methods, such as high performance liquid chromatography (HPLC).
 
-In a CE experiment, ions in a sample are separated according to their mobility which is translated into a chromatogram, where  the time the ions take to go through the capillary and  detector signal ( absorbance) is captured and recorded. Sample information as well as the experimental metadata and separation results(absorbance and time) are important variables in this experiment.  
+In a CE experiment, ions in a sample are separated according to their mobility which is translated into a chromatogram, where  the time the ions take to go through the capillary and  detector signal (absorbance) is captured and recorded. Sample information as well as the experimental metadata and separation results (absorbance and time) are important variables in this experiment.  
 
 Capillary Eletrophoresis is a type of Electrophoresis method. In CE JSON-LD, the experiment is defined by the experimental metadata, which encompasses information regarding the experimental procedure itself. Some examples are the buffer ph, buffer composition, capillary length etc.
-As important as the experiment metadata is the information about the sample to be analysed, which includes the analyte properties and identification. The results are defined based on the absorbance and time on the ions that are separated  in the same.
+As important as the experiment metadata is the information about the sample to be analysed, which includes the analyte properties and identification. The results are defined based on the absorbance and time on the ions that are separated in  same.
 
 
 
@@ -57,10 +57,10 @@ output <- fairify_data(CE_exp, domain = 'CapillaryElectrophoresis')
 ```
 
 
-CE Formulations schema diagram
+CE schema diagram
 --------------------------
 
-```{r, out.width="1200px", echo=FALSE, fig.cap="CE Formulations schema diagram"}
+```{r, out.width="1200px", echo=FALSE, fig.cap="CE Schema"}
 knitr::include_graphics("capillaryElectrophoresis.png")
 ```
 

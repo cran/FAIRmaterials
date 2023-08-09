@@ -146,3 +146,85 @@ plot_json_graph <- function(.x, legend = TRUE, vertex.size = 6,
   invisible(g)
 
 }
+
+#' Remove Adjacent Numbered Suffixes
+#'
+#' @description
+#' This function identifies and removes adjacent numbered suffixes from a character vector.
+#' If any strings in the vector have adjacent numerical suffixes, they are replaced with
+#' the base string without the numerical suffix.
+#'
+#' @param vec A character vector containing strings. The strings may end with numbers.
+#'
+#' @return A character vector with the same elements as the input, but with adjacent
+#'   numbered suffixes removed as described.
+#'
+#' @export
+#'
+#' @examples
+#' template_fill <- c("item1", "item5", "item2", "item3", "item4", "item", "item100",
+#' "product1", "product2", "product3", "product", "product11", "j8j", "j9j")
+#' result <- remove_adjacent_numbered_suffixes(template_fill)
+#' print(result)
+#' # "item", "item", "item", "item", "item", "item", "item100", "product",
+#' # "product", "product", "product", "product11", "j8j", "j9j"
+remove_adjacent_numbered_suffixes <- function(vec) {
+  base_names <- gsub("[[:digit:]]+$", "", vec)
+  duplicated_base_names <- unique(base_names[duplicated(base_names)])
+
+  # Loop through each duplicated base name
+  for (base_name in duplicated_base_names) {
+    indices <- grep(paste0("^", base_name, "[[:digit:]]+$"), vec)
+    numbers_at_end <- as.numeric(gsub("^.*?([[:digit:]]+)$", "\\1", vec[indices]))
+    continuous_sequence <- numbers_at_end[order(numbers_at_end)]
+    adjacent_indices <- c(TRUE, diff(continuous_sequence) == 1)
+
+    # If adjacent numbers are found in a sequence, remove the numbers at the end
+    if (any(adjacent_indices)) {
+      for (i in seq_along(adjacent_indices)) {
+        if (adjacent_indices[i]) {
+          vec[indices[i]] <- base_name
+        }
+      }
+    }
+  }
+
+  return(vec)
+}
+
+#' Replace NULL Values Recursively in a List
+#'
+#' This function recursively searches through a list or nested list
+#' and replaces all NULL values with NA. It also records the path
+#' where replacements occurred.
+#'
+#' @param lst A list or nested list where NULL values should be replaced.
+#' @param indices A character vector used for recursive tracking of indices.
+#'        This should typically be left at its default value when the function is called.
+#'
+#' @return A list with NULL values replaced by NA.
+#'
+#' @examples
+#' # Example usage:
+#' test_lst <- list(a = 1, b = NULL, c = list(d = 4, e = NULL))
+#' replace_null_recursive(test_lst)
+#'
+#' @export
+replace_null_recursive <- function(lst, indices = character(0)) {
+  if (is.list(lst)) {
+    for (i in seq_along(lst)) {
+      # Update indices for current iteration
+      current_indices <- c(indices, names(lst)[i])
+
+      if (is.null(lst[[i]])) {
+        # If the current element is NULL, replace and record the path
+        lst[[i]] <- NA
+        path_str <- paste(current_indices, collapse = "$")
+      } else {
+        # Otherwise, continue the recursion
+        lst[[i]] <- replace_null_recursive(lst[[i]], current_indices)
+      }
+    }
+  }
+  return(lst)
+}

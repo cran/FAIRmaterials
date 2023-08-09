@@ -11,14 +11,16 @@ vignette: >
 
 Metal AM JSON-LD Description
 -----------------------------------
-In Metal AM JSON-LD template, the sample information (sample id) is related to printing paramters configure to produce the part, the build geometry of the part, material properties of the part and the characterization techniques (in-situ and ex-situ) performed on the part. More detailed structure is shown in the schema diagram below. The purpose of using this JSON-LD template is to create a serialized and searchable template for all Metal AM experimental parameters and conditions that may be searched for and utilized in large scale data analytics.
+In Metal Additive Manufacturing (AM) JSON-LD template, the sample information (sample id) is related to printing parameters configure to produce the part, the build geometry of the part, material properties of the part and the characterization techniques (in-situ and ex-situ) performed on the part. 
 
-Creating JSON-LD for Metal AM  
+More detailed structure is shown in the schema diagram below. The purpose of using this JSON-LD template is to create a serialized and searchable template for all Metal AM experimental parameters and conditions that may be searched for and utilized in large scale data analytics.
+
+Creating JSON-LD for Metal AM in R
 -----------------------------------
 ```{r, message=FALSE, eval=FALSE}
 library(FAIRmaterials)
 
-# An example data frame for polymer AM
+# An example data frame for Metal AM 
 metalAM_data <- data.frame(
   'sampleID' = c('sa12345', 'sa24682'),
   'printMethod' = c('multi', 'single'),
@@ -31,14 +33,15 @@ metalAM_data <- data.frame(
 metal_output <- fairify_data(metalAM_data, domain = '')
 ```
 
-## Use Python package fairmaterials to create JSON-LD for XRD
+Creating JSON-LD for Metal AM in Python
+-----------------------------------
 
 ```{r, message=FALSE, eval=FALSE}
 
 from fairmaterials.fairify_data import *
 import pandas as pd
 
-# create python data frame for xrd
+# create python data frame for Metal AM 
 
 data = {
   'sampleID':['sa12345', 'sa24682'],

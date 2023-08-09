@@ -11,7 +11,9 @@ vignette: >
 
 Photovoltaic Cell JSON-LD Description
 -----------------------------------
-This json-ld template is used to store metadata information commonly used to describe photovoltaic (PV) cell. There is information included on the PV module, cell position, dimension, cell cut type and cell technology type. Note that a lot of the material included in this json pulls from the OrangeButton Taxonomy. 
+This json-ld template is used to store metadata information commonly used to describe photovoltaic (PV) cell. There is information included on the PV module, cell position, dimension, cell cut type and cell technology type. 
+
+Note that a lot of the material included in this json pulls from the OrangeButton Taxonomy. 
 
 Creating JSON-LD for photovoltaicCell in R
 ------------------------------------------

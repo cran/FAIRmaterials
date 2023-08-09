@@ -1,7 +1,7 @@
 ## ---- message=FALSE, eval=FALSE-----------------------------------------------
 #  library(FAIRmaterials)
 #  
-#  # An example data frame for polymer AM
+#  # An example data frame for Metal AM
 #  metalAM_data <- data.frame(
 #    'sampleID' = c('sa12345', 'sa24682'),
 #    'printMethod' = c('multi', 'single'),
@@ -18,7 +18,7 @@
 #  from fairmaterials.fairify_data import *
 #  import pandas as pd
 #  
-#  # create python data frame for xrd
+#  # create python data frame for Metal AM
 #  
 #  data = {
 #    'sampleID':['sa12345', 'sa24682'],

@@ -11,7 +11,9 @@ vignette: >
 
 Photovoltaic Inverter JSON-LD Description
 -----------------------------------
-This json-ld template is used to store metadata information commonly used to describe photovoltaic (PV) inverters There is information included on the PV system, PV module, inverter manufacturer, DC input, AC output and inverter efficiency. Note that a lot of the material included in this json pulls from the OrangeButton Taxonomy. 
+This json-ld template is used to store metadata information commonly used to describe photovoltaic (PV) inverters There is information included on the PV system, PV module, inverter manufacturer, DC input, AC output and inverter efficiency.
+
+Note that a lot of the material included in this json pulls from the OrangeButton Taxonomy. 
 
 Creating JSON-LD for photovoltaicInverter in R
 ------------------------------------------

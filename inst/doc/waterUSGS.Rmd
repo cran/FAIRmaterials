@@ -1,0 +1,77 @@
+---
+title: "Water USGS JSON-LD"
+author: "Erika Imada Barcelos, Jeffrey Yarus, Roger H. French"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Water USGS JSON-LD}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Water USGS JSON-LD Description
+-----------------------------------
+United States Geological Survey is the largest US mapping agency that focus on water, earth and biological science. It collects, monitor and assess water, mineral and energy resources in real time conditions. 
+
+[WaterQualityWatch](https://waterwatch.usgs.gov/wqwatch/) is an USGS tool available online that provides access to real-time water data that was collected at more than 2,000 stream sites in the United States. The sensors available in the streams allows to track in real time several parameters including stream flow, water temperature, nitrate concentration, specific conductance, pH, dissolved oxygen, gauge height and turbidity.  The tool also enables the retrieval of  historical and real-time data at any location where a sensor is available. 
+
+Alternativley to the WaterQualityWatch tool, the [dataRetrival R package](https://CRAN.R-project.org/package=dataRetrieval) also allows the data retrieval by connecting  the user query to the USGS API.
+
+Creating JSON-LD for Water USGS in R
+------------------------------------------
+```{r, message=FALSE, eval=FALSE}
+library(FAIRmaterials)
+
+# An example data frame for water USGS data and metadata
+stationMetadaUsgs <- data.frame(
+  'lat' = c('41.19893889', '30.02716385'),
+  'lot' = c('-84.7444033', '-952579888'),
+  'state' = c('Ohio', 'Texas'),
+  'county' = c('Pauding', 'Harris'),
+)
+
+
+# This will generate JSON-LD files for the example data
+outputMetada <- fairify_data(stationMetadataUsgs, saveLocal = TRUE)
+
+```
+
+Creating JSON-LD for Water USGS in Python
+------------------------------------------
+```{python, eval = FALSE, python.reticulate = FALSE}
+from fairmaterials.fairify_data import *
+import pandas as pd
+
+# An example data frame for water USGS metadata and data
+stationMetadaUsgs = pd.DataFrame  ('latitude' = ['41.19893889', '30.02716385'],
+  'longitude' = ['-84.7444033', '-952579888'],
+  'state' = ['Ohio', 'Texas'],
+  'county' = ['Pauding', 'Harris'])
+  
+# This will generate JSON-LD files for the example data and metadata
+
+outputMetada =fairify_data(stationMetadataUsgs, saveLocal = TRUE)
+
+```
+
+Water USGS schema diagram
+--------------------------
+
+```{r, out.width="1200px", echo=FALSE, fig.cap="Schema diagram for Water USGS"}
+knitr::include_graphics("waterUSGS.png")
+```
+
+References
+--------------------------
+https://www.usgs.gov/
+https://waterwatch.usgs.gov/wqwatch/
+
+
+Acknowledgment
+--------------------------
+This material is based upon work in the CASFER National Science Foundation (NSF) Engineering Research Center under the  under Grant No 2133576 sub award 21P735-03
+

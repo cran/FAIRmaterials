@@ -12,6 +12,6 @@
 #  # This will generate JSON-LD file for the example data
 #  output <- fairify_data(ASTER_Gdem, saveLocal = TRUE)
 
-## ---- out.width="1200px", echo=FALSE, fig.cap="CE Formulations schema diagram"----
+## ---- out.width="1200px", echo=FALSE, fig.cap="ASTER GDEM Schema"-------------
 knitr::include_graphics("asterGdem.png")
 

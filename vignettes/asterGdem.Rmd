@@ -11,14 +11,12 @@ vignette: >
 
 ASTER GDEM JSON-LD Description
 -----------------------------------
-ASTER (Terra Advanced Spaceborne Thermal Emission and Reflection Radiometer) Global Digital Elevation Model (GDEM) is a join initiative between NADA and the Ministry of Economy, Trade and Industry in Japan. 
+ASTER (Terra Advanced Spaceborne Thermal Emission and Reflection Radiometer) Global Digital Elevation Model (GDEM) is a join initiative between NASA and the Ministry of Economy, Trade and Industry in Japan. 
 
-It consists of GeoTIFF images captured by ASTER satellites of the entire world, spanning from from 83 degrees north latitude to 83 degrees south, encompassing 99 percent of Earth's landmass, including both water and land bodies. ASTER is currently in v3 improves and refined the algorithm and provides  greater coverage and lower artifacts. 
+It consists of GeoTIFF images captured by ASTER satellites of the entire world, spanning from from 83 degrees north latitude to 83 degrees south. It encompasses 99 percent of Earth's landmass and it includes both water and land bodies. ASTER is currently in version 3, which has an improved and refined algorithm and provides greater coverage and lower artifacts. 
 
-ASTER GDEM is composed of 22,912 tiles tiles, each having a 3601 x 3601(1 degree by 1 degree) pixels at a spatial resolution of 1 arc-second (30m). 
-GDEM covers land a water bodies. Water is separate from land and classified according to three categories: ocean, river and lake. The algorithms and methods used to calculate elevation for each body used was different, since there are major differences among them.  
-
-
+ASTER GDEM is composed of 22,912 tiles, each having a 3601 x 3601(1 degree by 1 degree) pixels at a spatial resolution of 1 arc-second (30m). 
+GDEM covers land and water bodies. Water is separate from land and classified according to three categories: ocean, river and lake. The algorithms and methods used to calculate elevation in each body used is different, since there are major differences between them.  
 
 
 Creating JSON-LD for ASTER GDEM in R
@@ -51,23 +49,23 @@ ASTER_Gdem = pd.DataFrame  ('latitude' = [41.4993567, 43.4724567],
   'elevation' = [250, 300]
 
 # This will generate JSON-LD file for the example data
-output <- fairify_data(ASTER_Gdem)
+output = fairify_data(ASTER_Gdem)
 ```
 
 
-ASTER Gdem schema diagram
+ASTER GDEM schema diagram
 --------------------------
 
-```{r, out.width="1200px", echo=FALSE, fig.cap="CE Formulations schema diagram"}
+```{r, out.width="1200px", echo=FALSE, fig.cap="ASTER GDEM Schema"}
 knitr::include_graphics("asterGdem.png")
 ```
 
 References
 --------------------------
 
-https://asterweb.jpl.nasa.gov/gdem.asp
-https://lpdaac.usgs.gov/documents/434/ASTGTM_User_Guide_V3.pdf
-https://lpdaac.usgs.gov/products/astgtmv003/
+#### https://asterweb.jpl.nasa.gov/gdem.asp
+#### lpdaac.usgs.gov/documents/434/ASTGTM_User_Guide_V3.pdf
+#### lpdaac.usgs.gov/products/astgtmv003/
 
 
 Acknowledgment

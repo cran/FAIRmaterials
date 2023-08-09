@@ -1,6 +1,6 @@
 ---
 title: "Commercial and Residential Buildings JSON-LD"
-author: "Tian Wang, Scott Maurer"
+author: "Tian Wang, Scott Maurer, Roger H. French"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
@@ -12,15 +12,16 @@ vignette: >
 ## Commercial and Residential Buildings JSON-LD Description
 
 The commercial and residential JSON-LD template is designed based on BuildingSync Schema and Building Energy Data Exchange Specification (BEDES) Dictionary.
-It defines several key meta information like climate zone, bulding location and building size for building energy efficiency research.
+
+It defines several key meta information like climate zone, building location and size for building energy efficiency research.
 
 
-## Use R pacakage FAIRmaterials to creating JSON-LD for XRD
+## Creating JSON-LD for Commercial and Residential Buildings in R
 
 ```{r, message=FALSE, eval=FALSE}
 library(FAIRmaterials)
 
-# Create R data frame for xrd
+# Create R data frame for commercial and residential buildings
 bldg_data <- data.frame(
   "PremisesName" = c("bldg 680", "bldg 686", "bldg 352"),
   "OperatorType" = "Food Sales",
@@ -42,13 +43,13 @@ bldg_data <- data.frame(
 output <- fairify_data(bldg_data, domain = 'building')
 ```
 
-## Use Python package fairmaterials to create JSON-LD for XRD
+## Creating JSON-LD for Commercial and Residential Buildings in Python
 
 ```{r, message=FALSE, eval=FALSE}
 from fairmaterials.fairify_data import *
 import pandas as pd
 
-# create python data frame for xrd
+# create python data frame for commercial and residential buildings
 data = {'PremisesName':['bldg 680', 'bldg 686', 'bldg 352'],
         'OperatorType':['Food Sales', 'Food Sales', 'Food Sales'],
         'Longitude':[-75.27, -76.88, -78.52],
@@ -75,7 +76,7 @@ fairify_data(bldg_data,'building')
 
 ## Commercial and Residential Buildings schema diagram
 
-```{r, out.width="1600px", echo=FALSE}
+```{r, out.width="1600px", echo=FALSE, fig.cap=" Commercial and Residential Buildings schema diagram"}
 knitr::include_graphics("building_schema.png")
 ```
 
