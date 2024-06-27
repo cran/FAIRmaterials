@@ -1,6 +1,6 @@
 Package: FAIRmaterials
 Title: Ontology Tools with Data FAIRification in Development
-Version: 0.4.2
+Version: 0.4.2.1
 Authors@R: c(
     person(
         given = c("Jonathan", "E"),
@@ -378,10 +378,8 @@ Depends: R (>= 3.1.1)
 Suggests: knitr, rmarkdown, testthat (>= 3.0.0)
 Config/testthat/edition: 3
 VignetteBuilder: knitr
-SystemRequirements: macOS: redland (>= 1.0.14); Linux: librdf0 (>=
-        1.0.14), librdf0-dev (>= 1.0.14)
 NeedsCompilation: no
-Packaged: 2024-06-24 13:34:51 UTC; jgordon
+Packaged: 2024-06-27 15:13:25 UTC; jgordon
 Author: Jonathan E Gordon [aut] (<https://orcid.org/0009-0007-5958-7386>),
   Alexander Harding Bradley [aut]
     (<https://orcid.org/0009-0000-2917-773X>),
@@ -439,4 +437,4 @@ Author: Jonathan E Gordon [aut] (<https://orcid.org/0009-0007-5958-7386>),
     (<https://orcid.org/0000-0002-6162-0532>)
 Maintainer: Roger H French <roger.french@case.edu>
 Repository: CRAN
-Date/Publication: 2024-06-24 14:40:07 UTC
+Date/Publication: 2024-06-27 15:40:02 UTC

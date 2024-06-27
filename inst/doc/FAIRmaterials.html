@@ -400,10 +400,20 @@ visualization of material science ontologies.</p>
 </div>
 <div id="how-to-use-fair-csv-template" class="section level1">
 <h1>How to use FAIR CSV template:</h1>
-<p>To Prepare your CSV file, ensure your CSV file contains the
+<p>To Prepare your CSV files, ensure your CSV files contains the
 appropriate ontological terms and corresponding data using this
-template: <a href="https://docs.google.com/spreadsheets/d/1k7gFRc1Yslc-m65aWfFCxqk5UtrKZl9c3GyEFQvLSFU/edit?usp=sharing">FAIR
+template: <a href="https://docs.google.com/spreadsheets/d/1k7gFRc1Yslc-m65aWfFCxqk5UtrKZl9c3GyEFQvLSFU/edit?usp=drive_link">FAIR
 CSV Template</a></p>
+<p>The XLSX versions of the templates can be found in the package using
+this code:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># Load the necessary library</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(utils)</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="co"># Specifying the path to the Zip file</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>zip_file <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="st">&quot;extdata&quot;</span>, <span class="st">&quot;FAIRSheetTemplatesZIP.zip&quot;</span>, <span class="at">package =</span> <span class="st">&quot;FAIRmaterials&quot;</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="co"># Extract files from the Zip</span></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="fu">unzip</span>(zip_file, <span class="at">exdir =</span> <span class="st">&quot;path/to/destination/for/templates&quot;</span>)</span></code></pre></div>
 <div id="example-of-xray-ontology-fair-csv-sheet" class="section level2">
 <h2>Example of XRay ontology FAIR CSV sheet</h2>
 <p>Example Name Space Sheet:
@@ -427,11 +437,11 @@ satisfaction with the information in the sheets.</p>
 <div id="install-and-load-the-package" class="section level1">
 <h1>Install and load the package</h1>
 <p>Install in R:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;FAIRmaterials&quot;</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">library</span>(FAIRmaterials)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;FAIRmaterials&quot;</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="fu">library</span>(FAIRmaterials)</span></code></pre></div>
 <p>Install in Python:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>pip install FAIRmaterials</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>pip install FAIRmaterials</span></code></pre></div>
 <p><br><br><br></p>
 </div>
 <div id="running-the-default-process_ontology_files-function" class="section level1">
@@ -439,9 +449,9 @@ satisfaction with the information in the sheets.</p>
 <div id="pv-ontology-sheets" class="section level2">
 <h2>PV ontology sheets:</h2>
 <p>Running the package in R:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># Process the CSV files in the PV folder</span></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>example_folder1 <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="st">&quot;extdata&quot;</span>, <span class="st">&quot;PV&quot;</span>, <span class="at">package =</span> <span class="st">&quot;FAIRmaterials&quot;</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>FAIRmaterials<span class="sc">::</span><span class="fu">process_ontology_files</span>(example_folder1, <span class="at">add_external_onto_info =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># Process the CSV files in the PV folder</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>example_folder1 <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="st">&quot;extdata&quot;</span>, <span class="st">&quot;PV&quot;</span>, <span class="at">package =</span> <span class="st">&quot;FAIRmaterials&quot;</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>FAIRmaterials<span class="sc">::</span><span class="fu">process_ontology_files</span>(example_folder1, <span class="at">add_external_onto_info =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 This visualization from the R package will be saved in the output folder
 as an SVG:
 <div class="figure">
@@ -1127,7 +1137,7 @@ json-ld output</span>
 </code></pre>
 </details>
 <p>Running the package in Python:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>python <span class="op">-</span>m FAIRmaterials <span class="op">--</span>folder_path <span class="op">/</span>path<span class="op">/</span>to<span class="op">/</span>csv<span class="op">/</span>files <span class="op">--</span>include_graph_valuetype <span class="op">--</span>include_pylode_docs</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>python <span class="op">-</span>m FAIRmaterials <span class="op">--</span>folder_path <span class="op">/</span>path<span class="op">/</span>to<span class="op">/</span>csv<span class="op">/</span>files <span class="op">--</span>include_graph_valuetype <span class="op">--</span>include_pylode_docs</span></code></pre></div>
 This visualization from the Python package will be saved in the output
 folder as an PNG:
 <div class="figure">
@@ -1901,9 +1911,9 @@ output</span>
 <div id="xray-sample-ontology-sheets" class="section level2">
 <h2>XRay Sample ontology sheets:</h2>
 <p>Running the package in R:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="co"># Process the CSV files in the XRay folder</span></span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>example_folder2 <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="st">&quot;extdata&quot;</span>, <span class="st">&quot;XRay&quot;</span>, <span class="at">package =</span> <span class="st">&quot;FAIRmaterials&quot;</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>FAIRmaterials<span class="sc">::</span><span class="fu">process_ontology_files</span>(example_folder2, <span class="at">add_external_onto_info =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># Process the CSV files in the Xray folder</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>example_folder2 <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="st">&quot;extdata&quot;</span>, <span class="st">&quot;XRay&quot;</span>, <span class="at">package =</span> <span class="st">&quot;FAIRmaterials&quot;</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>FAIRmaterials<span class="sc">::</span><span class="fu">process_ontology_files</span>(example_folder2, <span class="at">add_external_onto_info =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 This visualization from the R package will be saved in the output folder
 as an SVG:
 <div class="figure">
@@ -2267,8 +2277,8 @@ json-ld output</span>
 </code></pre>
 </details>
 <p>Running the package in Python:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co"># Process the CSV files in the Xray folder</span></span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>python <span class="op">-</span>m FAIRmaterials <span class="op">--</span>folder_path <span class="op">/</span>path<span class="op">/</span>to<span class="op">/</span>csv<span class="op">/</span>files <span class="op">--</span>include_graph_valuetype <span class="op">--</span>include_pylode_docs</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="co"># Process the CSV files in the Xray folder</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>python <span class="op">-</span>m FAIRmaterials <span class="op">--</span>folder_path <span class="op">/</span>path<span class="op">/</span>to<span class="op">/</span>csv<span class="op">/</span>files <span class="op">--</span>include_graph_valuetype <span class="op">--</span>include_pylode_docs</span></code></pre></div>
 This visualization from the Python package will be saved in the output
 folder as an PNG:
 <div class="figure">
@@ -2655,7 +2665,7 @@ json-ld output</span>
 are excluded from graph. We can see how this graph differs from the PV
 graph above.</p>
 <p>Removing values in R:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>FAIRmaterials<span class="sc">::</span><span class="fu">process_ontology_files</span>(example_folder1, <span class="at">include_graph_valuetype =</span> <span class="cn">FALSE</span>, <span class="at">add_external_onto_info =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>FAIRmaterials<span class="sc">::</span><span class="fu">process_ontology_files</span>(example_folder1, <span class="at">include_graph_valuetype =</span> <span class="cn">FALSE</span>, <span class="at">add_external_onto_info =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 This visualization from the Python package will be saved in the output
 folder as a SVG:
 <div class="figure">
@@ -2672,7 +2682,7 @@ PV Visualization without Value Types
 excluded from graph. We can see how this graph differs from the PV graph
 above.</p>
 <p>Removing values in Python:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>python <span class="op">-</span>m FAIRmaterials <span class="op">--</span>folder_path <span class="op">/</span>path<span class="op">/</span>to<span class="op">/</span>csv<span class="op">/</span>files</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>python <span class="op">-</span>m FAIRmaterials <span class="op">--</span>folder_path <span class="op">/</span>path<span class="op">/</span>to<span class="op">/</span>csv<span class="op">/</span>files</span></code></pre></div>
 This visualization from the Python package will be saved in the output
 folder as a PNG:
 <div class="figure">
@@ -2691,7 +2701,7 @@ Sample and PV Module data and update the output.</p>
 <div id="for-pv-module" class="section level2">
 <h2>For PV Module:</h2>
 <p>Adding external ontology information in R:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>FAIRmaterials<span class="sc">::</span><span class="fu">process_ontology_files</span>(example_folder1, <span class="at">include_graph_valuetype =</span> <span class="cn">TRUE</span>, <span class="at">add_external_onto_info =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>FAIRmaterials<span class="sc">::</span><span class="fu">process_ontology_files</span>(example_folder1, <span class="at">include_graph_valuetype =</span> <span class="cn">TRUE</span>, <span class="at">add_external_onto_info =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <div id="turtleowl-output-from-pv-module-1" class="section level3">
 <h3>turtle/owl output from PV Module:</h3>
 <details>
@@ -3000,7 +3010,7 @@ got more arguments pulled from <a href="https://w3id.org/pmd/co/" class="uri">ht
 <div id="for-xray-sample" class="section level2">
 <h2>For XRay Sample:</h2>
 <p>Adding external ontology information in R:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a>FAIRmaterials<span class="sc">::</span><span class="fu">process_ontology_files</span>(example_folder2, <span class="at">include_graph_valuetype =</span> <span class="cn">TRUE</span>, <span class="at">add_external_onto_info =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a>FAIRmaterials<span class="sc">::</span><span class="fu">process_ontology_files</span>(example_folder2, <span class="at">include_graph_valuetype =</span> <span class="cn">TRUE</span>, <span class="at">add_external_onto_info =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <div id="turtleowl-output-from-xray-sample" class="section level3">
 <h3>turtle/owl output from XRay Sample:</h3>
 <details>
@@ -3159,7 +3169,7 @@ term in the XRay Sample and PV Module data and update the output.</p>
 <div id="for-pv-module-1" class="section level2">
 <h2>For PV Module:</h2>
 <p>Adding external ontology information in Python:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a>python <span class="op">-</span>m FAIRmaterials <span class="op">--</span>folder_path <span class="op">/</span>path<span class="op">/</span>to<span class="op">/</span>csv<span class="op">/</span>files <span class="op">--</span>include_graph_valuetype <span class="op">--</span>add_external_onto_info</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a>python <span class="op">-</span>m FAIRmaterials <span class="op">--</span>folder_path <span class="op">/</span>path<span class="op">/</span>to<span class="op">/</span>csv<span class="op">/</span>files <span class="op">--</span>include_graph_valuetype <span class="op">--</span>add_external_onto_info</span></code></pre></div>
 <div id="turtleowl-output-from-pv-module-2" class="section level3">
 <h3>turtle/owl output from PV Module:</h3>
 <details>
@@ -3441,7 +3451,7 @@ got more arguments pulled from <a href="https://w3id.org/pmd/co/" class="uri">ht
 <div id="for-xray-sample-1" class="section level2">
 <h2>For XRay Sample:</h2>
 <p>Adding external ontology information in R:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a>FAIRmaterials<span class="sc">::</span><span class="fu">process_ontology_files</span>(example_folder2, <span class="at">include_graph_valuetype =</span> <span class="cn">TRUE</span>, <span class="at">add_external_onto_info =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a>FAIRmaterials<span class="sc">::</span><span class="fu">process_ontology_files</span>(example_folder2, <span class="at">include_graph_valuetype =</span> <span class="cn">TRUE</span>, <span class="at">add_external_onto_info =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <div id="turtleowl-output-from-xray-sample-1" class="section level3">
 <h3>turtle/owl output from XRay Sample:</h3>
 <details>
@@ -3591,8 +3601,8 @@ by providing the function a folder path that contains both the PV and
 XRay ontology sheets. We can also specify some of the metadata included
 in the outputs.</p>
 <p>Merging ontologies in R:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a>example_folder3 <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="st">&quot;extdata&quot;</span>, <span class="at">package =</span> <span class="st">&quot;FAIRmaterials&quot;</span>)</span>
-<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a>FAIRmaterials<span class="sc">::</span><span class="fu">process_ontology_files</span>(example_folder3, <span class="at">add_external_onto_info =</span> <span class="cn">FALSE</span>, <span class="at">merge_title =</span> <span class="st">&quot;MergedPVandXRay&quot;</span>, <span class="at">merge_base_uri =</span> <span class="st">&quot;https://cwrusdle.bitbucket.io/OntologyFilesOwl/Ontology/&quot;</span>, <span class="at">merge_version =</span> <span class="st">&quot;1.0&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a>example_folder3 <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="st">&quot;extdata&quot;</span>, <span class="at">package =</span> <span class="st">&quot;FAIRmaterials&quot;</span>)</span>
+<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a>FAIRmaterials<span class="sc">::</span><span class="fu">process_ontology_files</span>(example_folder3, <span class="at">add_external_onto_info =</span> <span class="cn">FALSE</span>, <span class="at">merge_title =</span> <span class="st">&quot;MergedPVandXRay&quot;</span>, <span class="at">merge_base_uri =</span> <span class="st">&quot;https://cwrusdle.bitbucket.io/OntologyFilesOwl/Ontology/&quot;</span>, <span class="at">merge_version =</span> <span class="st">&quot;1.0&quot;</span>)</span></code></pre></div>
 This is the visualization for the two ontologies merged. This
 visualization from the R package will be saved in the output folder as
 an SVG:
@@ -3955,7 +3965,7 @@ pmd:value
 <p>We can see the ontology metadata was updated and the ontologies were
 merged.</p>
 <p>Merging ontologies in Python:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a>python <span class="op">-</span>m FAIRmaterials <span class="op">--</span>folder_path <span class="op">/</span>path<span class="op">/</span>to<span class="op">/</span>csv<span class="op">/</span>files<span class="op">/</span> <span class="op">--</span>merge_title MergedPVandXRay <span class="op">--</span>merge_base_uri https:<span class="op">//</span>cwrusdle.bitbucket.io<span class="op">/</span>OntologyFilesOwl<span class="op">/</span>Ontology<span class="op">/</span> <span class="op">--</span>merge_version <span class="fl">1.0</span></span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a>python <span class="op">-</span>m FAIRmaterials <span class="op">--</span>folder_path <span class="op">/</span>path<span class="op">/</span>to<span class="op">/</span>csv<span class="op">/</span>files<span class="op">/</span> <span class="op">--</span>merge_title MergedPVandXRay <span class="op">--</span>merge_base_uri https:<span class="op">//</span>cwrusdle.bitbucket.io<span class="op">/</span>OntologyFilesOwl<span class="op">/</span>Ontology<span class="op">/</span> <span class="op">--</span>merge_version <span class="fl">1.0</span></span></code></pre></div>
 </div>
 <div id="example-turtleowl-output-from-merged-ontology-1" class="section level3">
 <h3>Example turtle/owl output from merged ontology:</h3>
